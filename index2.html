@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<p>The XMLHttpRequest is created through some javascript code. Then when the button is clicked an event is created.</p>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
+<style>
+h1 {
+  color: Red;
+  font-family: cursive;
+}
+body {
+  background-color: yellow;
+}
+button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+p {
+  color: Red;
+  border: bottom;
+  text-align: center;
+  font-family: cursive;
+
+}
+
+</style>
+
+</body>
+</html>
